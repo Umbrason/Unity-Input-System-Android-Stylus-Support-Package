@@ -231,7 +231,7 @@ namespace Umbrason.AndroidStylusSupport
             state.pressure = pressure;
             state.tilt = tilt;
             state.rotation = rotation;
-            state.position = new(positionX, positionY);
+            state.position = new(positionX, Screen.height - positionY); //inverted Y axis
 
             var pressed = eventType == ActionDown || eventType == ActionMove;
             var tip = pressed && toolType == ToolTypeStylus ? 1 : 0;
